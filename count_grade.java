@@ -1,7 +1,6 @@
 import java.util.Scanner;
 
 public class count_grade {
-    //method to count percentation 
     static int countPercentation(int nilai, String type) {
         int percent = 0;
         if (type == "personal") {
@@ -14,7 +13,7 @@ public class count_grade {
         nilai = (percent * nilai) / 100;
         return nilai;
     }
-    //method to set grade 
+    
     static String setGrade(int nilai) {
         String grade;
         if (nilai >= 85) {
@@ -30,43 +29,28 @@ public class count_grade {
         }
         return grade;
     }
-
     public static void main(String[] args) {
-        // initial for input scanner
         Scanner input = new Scanner(System.in);
-
-        //inital variable for input
-        int tp1, tp2, tk1, tk2, kuis1, kuis2, uas, total_nilai;
+        int total_nilai = 0;
         String grade;
-        
+        String [][] answer = {
+            {"Nilai Tugas Personal 1 : ", "personal"},
+            {"Nilai Tugas Personal 2 : ", "personal"},
+            {"Nilai Tugas Kelompok 1 : ", "kelompok"},
+            {"Nilai Tugas Kelompok 2 : ", "kelompok"},
+            {"Nilai Kuis 1 : ", "kuis"},
+            {"Nilai Kuis 2 : ", "kuis"},
+            {"Nilai Ujian Akhir Semester : ", "uas"},
+        };
         System.out.println("========== Masukkan Nilai ==========");
-        System.out.print("Nilai Tugas Personal 1 : ");
-        tp1 = input.nextInt();
-        System.out.print("Nilai Tugas Personal 2 : ");
-        tp2 = input.nextInt();
-        System.out.print("Nilai Tugas Kelompok 1 : ");
-        tk1 = input.nextInt();
-        System.out.print("Nilai Tugas Kelompok 2 : ");
-        tk2 = input.nextInt();
-        System.out.print("Nilai Kuis 1 : ");
-        kuis1 = input.nextInt();
-        System.out.print("Nilai Kuis 2 : ");
-        kuis2 = input.nextInt();
-        System.out.print("Nilai Ujian Akhir Semester : ");
-        uas = input.nextInt();
-
-        //count every value from input
-        tp1 = countPercentation(tp1, "personal");
-        tp2 = countPercentation(tp2, "personal");
-        tk1 = countPercentation(tk1, "kelompok");
-        tk2 = countPercentation(tk2, "kelompok");
-        kuis1 = countPercentation(kuis1, "kuis");
-        kuis2 = countPercentation(kuis2, "kuis");
-        uas = countPercentation(uas, "uas");
-
-        total_nilai = tp1 + tp2 + tk1 + tk2 + kuis1 + kuis2 + uas;
+        for (int i = 0; i < answer.length; i++) {
+            int value = 0;
+            System.out.print(answer[i][0]);    
+            value = input.nextInt();
+            value = countPercentation(value, answer[i][1]);    
+            total_nilai += value;    
+        }
         grade = setGrade(total_nilai);
-
         System.out.println("========== Hasil Perhitungan Nilai ==========");
         System.out.println("Nilai Total : " + total_nilai);
         System.out.print("Grade : " + grade);
