@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class main {
+public class guest_number {
     public static void main(String[] args) {
         //Input
         int random, tebak, jumlah;
@@ -32,5 +32,7 @@ public class main {
                 }
             }
         } while (tebak != random);
+
+        masukan.close();
     }
 }

@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class telp {
+public class count_nohp_char {
     public static void main(String[] args) {
         String no_hp, rincian = "";
         int len, total = 0;
@@ -23,5 +23,7 @@ public class telp {
 
         System.out.println("Rincian penjumlahan adalah : " + rincian);
         System.out.print("Total penjumlahan adalah : " + total);
+
+        input.close();
     }
 }

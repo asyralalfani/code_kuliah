@@ -3,7 +3,7 @@ import java.util.Scanner;
 /**
  * index
  */
-public class index {
+public class count_kwh {
     public static void main(String[] args) {
         // deklarasi variable
         Scanner input = new Scanner(System.in);
@@ -51,6 +51,8 @@ public class index {
         System.out.println("Total kWh Pertama: Rp. " + kwh_pertama * biaya_per_kwh);
         System.out.println("Total kWh Sisa: Rp. " + biaya_sisa_kwh);
         System.out.println("Total Biaya : Rp. " + biaya_total_kwh);
+
+        input.close();
         
     }
 }

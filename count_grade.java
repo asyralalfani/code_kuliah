@@ -54,5 +54,7 @@ public class count_grade {
         System.out.println("========== Hasil Perhitungan Nilai ==========");
         System.out.println("Nilai Total : " + total_nilai);
         System.out.print("Grade : " + grade);
+
+        input.close();
     }
 }
