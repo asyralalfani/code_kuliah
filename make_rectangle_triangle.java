@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class make_persegi {
+public class make_rectangle_triangle {
     public static void main(String[] args) {
         int sisi;
 
