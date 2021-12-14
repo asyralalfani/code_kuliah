@@ -2,10 +2,10 @@ import java.util.Scanner;
 
 public class count_volume {
     static String [] question = {"tabung", "balok", "bola"};
+    static Scanner input = new Scanner(System.in);
 
     static void global_count (int choose) {
-        Scanner input = new Scanner(System.in);
-
+        
         String [][] ques = { {"jari-jari", "1,3"}, {"panjang", "2"}, {"lebar", "2"}, {"tinggi", "1,2"} };
         String param = "";
         double volume = 0, luas = 0, phi = 3.14;
@@ -49,15 +49,13 @@ public class count_volume {
         System.out.println("================== HASIL ===================");
         System.out.println("Volume " + question[choose-1] + " : " + volume);
         System.out.println("Luas permukaan " + question[choose-1] + " : " + luas);
-        input.close();
     }
 
     public static void main(String[] args) {
         String loop = "y";
-        Scanner input = new Scanner(System.in);
 
         while (loop.equals("y")) {
-            System.out.println("***************** MENU *********************");
+            System.out.println("\n***************** MENU *********************");
             for (int i = 0; i < question.length; i++) {
                 int j = i + 1;
                 System.out.println(j + ". Hitung luas permukaan dan volume " + question[i]);
